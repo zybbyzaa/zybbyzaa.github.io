@@ -310,15 +310,17 @@ topbar-body-right li {
 .banner {
   min-width: 1170px;
   /*margin-left: auto;
-	margin-right: auto;*/ }
+  margin-right: auto;*/ }
 
 body.mobile {
   background-color: #263731;
   height: 100%; }
   body.mobile .notice-wrapper {
     margin-top: 0; }
-  body.mobile .notice-content:before, body.mobile .notice-content:after {
-    height: 100%; }
+  body.mobile .notice-content {
+    font-size: .24rem; }
+    body.mobile .notice-content:before, body.mobile .notice-content:after {
+      height: 100%; }
 
 .notice-wrapper {
   -moz-box-sizing: border-box;
