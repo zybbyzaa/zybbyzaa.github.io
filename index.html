@@ -28,48 +28,19 @@
             width:100%;
             height:100%;
         }
-        li{
-            width: 100%;
-            height: 1rem;
-            color: #333;
-            font-size: .24rem;
-        }
     </style>
 </head>
 
 <body>
     <div id="root">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>1</li>
-            <li>3</li>
-            <li>1</li>
-            <li>4</li>
-            <li>1</li>
-            <li>1</li>
-            <li>5</li>
-            <li>1</li>
-            <li>7</li>
-            <li>1</li>
-            <li>8</li>
-            <li>1</li>     
-        </ul>
+        <object id="player" name="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10.0.32" data="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf" width="1282" height="721.125"><param name="movie" value="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf">
+            <param name="flashvars" value="sceneType=1&amp;danmu=true&amp;volume=0.5&amp;source=http%3A%2F%2Fwww.yy.com%2F54880976%2F54880976%3FtempId%3D16777217%26f%3D0%26cpuid%3D0&amp;anchorId=0&amp;livedelay=1&amp;coop=0&amp;topSid=54880976&amp;subSid=54880976">
+            <param name="quality" value="high"><param name="allowScriptAccess" value="always">
+            <param name="wmode" value="opaque"><param name="bgcolor" value="#000000"><param name="allowFullScreen" value="true">
+            <param name="allowFullScreenInteractive" value="true">
+            <embed id="embed_player" src="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf" width="787" allowfullscreen="true" allowfullscreeninteractive="true" height="443" allowscriptaccess="always" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="sceneType=1&amp;danmu=true&amp;volume=0.5&amp;source=http%3A%2F%2Fwww.yy.com%2F54880976%2F54880976%3FtempId%3D16777217%26f%3D0%26cpuid%3D0&amp;anchorId=0&amp;livedelay=1&amp;coop=0&amp;topSid=54880976&amp;subSid=54880976" type="application/x-shockwave-flash" wmode="opaque" bgcolor="#000000">
+        </object>
     </div>
-    <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-      var y = 0;
-      $('#root').on('touchstart',function(e){
-          y=e.touches[0].clientY;
-      });
-      $('#root').on('touchmove',function(e){
-           if($(document).scrollTop() === 0 && e.touches[0].clientY > y){
-               e.preventDefault(); 
-           }else{
-               console.log(1);
-           }
-      });
-    </script>
 </body>
 
 </html>
