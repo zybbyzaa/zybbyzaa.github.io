@@ -33,14 +33,11 @@
 
 <body>
     <div id="root">
-        <object id="player" name="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10.0.32" data="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf" width="1282" height="721.125"><param name="movie" value="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf">
-            <param name="flashvars" value="sceneType=1&amp;danmu=true&amp;volume=0.5&amp;source=http%3A%2F%2Fwww.yy.com%2F54880976%2F54880976%3FtempId%3D16777217%26f%3D0%26cpuid%3D0&amp;anchorId=0&amp;livedelay=1&amp;coop=0&amp;topSid=54880976&amp;subSid=54880976">
-            <param name="quality" value="high"><param name="allowScriptAccess" value="always">
-            <param name="wmode" value="opaque"><param name="bgcolor" value="#000000"><param name="allowFullScreen" value="true">
-            <param name="allowFullScreenInteractive" value="true">
-            <embed id="embed_player" src="http://weblbs.yystatic.com/s/54880976/54880976/yycomscene.swf" width="787" allowfullscreen="true" allowfullscreeninteractive="true" height="443" allowscriptaccess="always" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="sceneType=1&amp;danmu=true&amp;volume=0.5&amp;source=http%3A%2F%2Fwww.yy.com%2F54880976%2F54880976%3FtempId%3D16777217%26f%3D0%26cpuid%3D0&amp;anchorId=0&amp;livedelay=1&amp;coop=0&amp;topSid=54880976&amp;subSid=54880976" type="application/x-shockwave-flash" wmode="opaque" bgcolor="#000000">
-        </object>
     </div>
 </body>
+<script>
+    var root = document.getElementById('root')
+    alert(root.clientHeight)
+</script>
 
 </html>
