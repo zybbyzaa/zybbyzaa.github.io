@@ -39,7 +39,12 @@
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(root.clientHeight - lib.flexible.rem2px(7.01))
     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
-    alert(ua);
+    if (localStorage.getItem('test') === 'true') {
+        alert(1);
+    } else {
+        localStorage.setItem('test',true);
+        alert(2);
+    }
 </script>
 
 </html>
