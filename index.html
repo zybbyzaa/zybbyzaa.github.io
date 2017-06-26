@@ -38,7 +38,8 @@
 <script>
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(root.clientHeight - lib.flexible.rem2px(7.01))
-    alert(navigator.userAgent);
+    var ua = navigator.userAgent.replace(/NetType\/.* /,'');
+    alert(ua);
 </script>
 
 </html>
