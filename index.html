@@ -34,13 +34,14 @@
 
 <body>
     <div id="root">
+        123456
     </div>
 </body>
 <script>
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(root.clientHeight)
     var width = lib.flexible.px2rem(root.clientWidth)
-    root.style.cssText = 'height:' + width + 'rem; width:' + height + 'rem;';
+    root.style.cssText = 'height:' + width + 'rem; width:' + height + 'rem; transform-origin: left top; transform: translateX(' + width + 'rem) rotateZ(90deg);';
     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
 </script>
 
