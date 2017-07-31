@@ -40,8 +40,7 @@
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(root.clientHeight)
     var width = lib.flexible.px2rem(root.clientWidth)
-    root.style.width = height;
-    root.style.height = width;
+    root.style.cssText = 'height:' + width + 'rem; width:' + height + 'rem;';
     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
 </script>
 
