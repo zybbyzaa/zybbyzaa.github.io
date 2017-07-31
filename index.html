@@ -27,6 +27,7 @@
         #root{
             width:100%;
             height:100%;
+            background: #ff0;
         }
     </style>
 </head>
@@ -37,14 +38,11 @@
 </body>
 <script>
     var root = document.getElementById('root')
-    var height = lib.flexible.px2rem(root.clientHeight - lib.flexible.rem2px(7.01))
+    var height = lib.flexible.px2rem(root.clientHeight)
+    var width = lib.flexible.px2rem(root.clientWidth)
+    root.style.width = height;
+    root.style.height = width;
     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
-    if (localStorage.getItem('test') === 'true') {
-        alert(1);
-    } else {
-        localStorage.setItem('test',true);
-        alert(2);
-    }
 </script>
 
 </html>
