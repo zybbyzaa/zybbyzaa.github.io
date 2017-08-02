@@ -41,6 +41,7 @@
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(root.clientHeight)
     var width = lib.flexible.px2rem(root.clientWidth)
+    alert(lib.flexible.px2rem(document.body.clientHeight));
     if (width < height) {
         root.style.cssText = 'height:' + width + 'rem; width:' + height + 'rem; transform-origin: left top; transform: translateX(' + width + 'rem) rotateZ(90deg);';
     }
