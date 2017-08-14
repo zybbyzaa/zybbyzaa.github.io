@@ -34,20 +34,14 @@
 
 <body>
     <div id="root">
-        123456
     </div>
 </body>
 <script>
     var root = document.getElementById('root')
     var height = lib.flexible.px2rem(document.body.clientHeight)
     var width = lib.flexible.px2rem(document.body.clientWidth)
-    alert(document.body.clientWidth + ' X ' + document.body.clientHeight + ' => ' + width + 'rem X ' + height + 'rem');
-    if (width < height) {
-        root.style.cssText = 'height:' + width + 'rem; width:' + height + 'rem; transform-origin: left top; transform: translateX(' + width + 'rem) rotateZ(90deg);';
-    }
-    
+    root.innerText = document.body.clientWidth + ' X ' + document.body.clientHeight + ' => ' + width + 'rem X ' + height + 'rem';
     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
-    alert(window.orientation);
 </script>
 
 </html>
