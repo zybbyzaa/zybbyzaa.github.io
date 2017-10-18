@@ -55,7 +55,7 @@
 //     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
     function getFontFamily(elem) {
         var computedStyles = window.getComputedStyle(elem);
-        console.log(computedStyles['font-family']);
+        return computedStyles['font-family'];
     }
     alert(getFontFamily(document.body));
 </script>
