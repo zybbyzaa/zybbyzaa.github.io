@@ -53,6 +53,11 @@
 //     var width = lib.flexible.px2rem(document.body.clientWidth)
 //     root.innerText = document.body.clientWidth + ' X ' + document.body.clientHeight + ' => ' + width + 'rem X ' + height + 'rem';
 //     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
+    function getFontFamily(elem) {
+        var computedStyles = window.getComputedStyle(elem);
+        console.log(computedStyles['font-family']);
+    }
+    alert(getFontFamily(document.body));
 </script>
 
 </html>
