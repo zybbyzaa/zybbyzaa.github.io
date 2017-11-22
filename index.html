@@ -53,13 +53,13 @@
 //     root.innerText = document.body.clientWidth + ' X ' + document.body.clientHeight + ' => ' + width + 'rem X ' + height + 'rem';
 //     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
     function map_click(lng,lat){ 
-var map = new BMap.Map(“allmap”); 
+var map = new BMap.Map("allmap"); 
 var point = new BMap.Point(lng,lat); 
 map.centerAndZoom(point,12); 
 var geoc = new BMap.Geocoder(); 
 geoc.getLocation(point,function(rs){ 
 var addComp = rs.addressComponents; 
-alert(addComp.province + “, ” + addComp.city + “, ” + addComp.district + “, ” + addComp.street + “, ” + addComp.streetNumber); 
+alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber); 
 }); 
 }
     
