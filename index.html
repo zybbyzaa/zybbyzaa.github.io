@@ -51,7 +51,7 @@
         var computedStyles = window.getComputedStyle(elem);
         return computedStyles['font-family'];
     }
-    navigator.geolocation.getCurrentPosition(() =>{alert(1)})
+    navigator.geolocation.getCurrentPosition((position) =>{alert(position.coords.latitude,position.coords.longitude)})
 //     alert(getFontFamily(document.body));
 </script>
 
