@@ -43,9 +43,8 @@
         <a href="https://u.wechat.com/MKBpY4MRuEghl0fvwsraI4k">test</a>
         <a href="mqqwpa://im/chat?chat_type=wpa&uin=759316871&version=1&src_type=web&web_src=bjhuli.com">报名咨询</a>
     </div>
-     <div id="map" style="width:600px; height:400px">
-        </div>
-    <input type="file" accept="image/*" capture="camera" value="上传">
+     <input type="file" accept="image/*" capture="camera">
+    <input type="file" accept="image/*" capture="multiple">
 </body>
 <script>
 //     var root = document.getElementById('root')
@@ -53,20 +52,20 @@
 //     var width = lib.flexible.px2rem(document.body.clientWidth)
 //     root.innerText = document.body.clientWidth + ' X ' + document.body.clientHeight + ' => ' + width + 'rem X ' + height + 'rem';
 //     var ua = navigator.userAgent.replace(/NetType\/.*\s/,'');
-    function map_click(lng,lat){ 
-        try {
-var map = new BMap.Map("allmap"); 
-var point = new BMap.Point(lng,lat); 
-map.centerAndZoom(point,12); 
-var geoc = new BMap.Geocoder(); 
-geoc.getLocation(point,function(rs){ 
-var addComp = rs.addressComponents; 
-alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber); 
-}); 
-        } catch(err){console.log(err);}
-}
+//     function map_click(lng,lat){ 
+//         try {
+// var map = new BMap.Map("allmap"); 
+// var point = new BMap.Point(lng,lat); 
+// map.centerAndZoom(point,12); 
+// var geoc = new BMap.Geocoder(); 
+// geoc.getLocation(point,function(rs){ 
+// var addComp = rs.addressComponents; 
+// alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber); 
+// }); 
+//         } catch(err){console.log(err);}
+// }
     
-    window.navigator.geolocation.getCurrentPosition((position) => {map_click(position.coords.longitude,position.coords.latitude)});
+//     window.navigator.geolocation.getCurrentPosition((position) => {map_click(position.coords.longitude,position.coords.latitude)});
 //     alert(getFontFamily(document.body));
 </script>
 
