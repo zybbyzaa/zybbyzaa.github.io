@@ -36,17 +36,22 @@
 
 <body>
     <div id="root">
-        
+        <audio id="player" />
     </div>
     
     
 </body>
 <script>
-      setInterval(() => {
-        img = new Image();
-        img.src =  "http://192.168.10.110:7001/api/system/code?t=" + new Date();
-        document.body.append(img);
-      },1000)
+    document.body.onload = function() {
+      var player = document.getElementById('player');
+      player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzM=";
+      // player.load();
+      player.onended = function(e) {
+        e.target.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
+        e.target.play();
+      }
+    }
+    
 </script>
 
 </html>
