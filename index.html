@@ -51,10 +51,18 @@
       }
       
       player.onended = function(e) {
-       e.target.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
-       e.target.load();
-       e.target.play();
+       player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
+       player.load();
+       player.play();
       }
+        player.addEventListener('timeupdate', function () {  
+          // 监听播放完成，ended 事件不准确  
+          if (player.currentTime >= player.duration) {    
+            player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
+       player.load();
+       player.play();
+          }}, 
+        false);
     }
     
 </script>
