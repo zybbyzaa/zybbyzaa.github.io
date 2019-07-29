@@ -37,7 +37,7 @@
 <body>
     <div id="root">
         <div><audio preload="auto" id="player" controls src="https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzM="></audio></div>
-        <div><audio preload="auto" id="player2" controls src="https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="></audio></div>
+        
     </div>
     
     
@@ -45,14 +45,14 @@
 <script>
     document.body.onload = function() {
       var player = document.getElementById('player');
-      player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzM=";
       player.load();
       player.canplaythrough = function(e) {
           e.target.play();
       }
       
       player.onended = function(e) {
-       document.getElementById('player2').play();
+       e.target.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
+       e.target.load();
          
       }
     }
