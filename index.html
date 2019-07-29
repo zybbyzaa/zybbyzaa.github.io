@@ -46,8 +46,8 @@
     document.body.onload = function() {
       var player = document.getElementById('player');
       player.load();
-      player.canplaythrough = function(e) {
-          e.target.play();
+      player.canplay = function(e) {
+         player.play();
       }
       
       player.onended = function(e) {
