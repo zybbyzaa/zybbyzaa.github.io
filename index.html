@@ -1,70 +1,282 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>
-    </title>
-    <!-- rem适配脚本 -->
-    <!--<script>
-        (function(h,l){var p=h.document;var b=p.documentElement;var n=p.querySelector('meta[name="viewport"]');var q=0;var f=0;var g;var k=l.flexible||(l.flexible={});var j=window.document.createElement("div");j.style.width="1rem";j.style.display="none";b.firstElementChild.appendChild(j);var e=parseFloat(window.getComputedStyle(j,null).getPropertyValue("width"));j.remove();if(!q&&!f){var i=h.navigator.appVersion.match(/android/gi);var c=h.navigator.appVersion.match(/iphone/gi);var o=h.devicePixelRatio;if(c){if(o>=3&&(!q||q>=3)){q=3}else{if(o>=2&&(!q||q>=2)){q=2}else{q=1}}}else{q=1}f=1/q}b.setAttribute("data-dpr",q);if(!n){n=p.createElement("meta");n.setAttribute("name","viewport");n.setAttribute("content","width=device-width,initial-scale="+f+", maximum-scale="+f+", minimum-scale="+f+", user-scalable=no");if(b.firstElementChild){b.firstElementChild.appendChild(n)}else{var a=p.createElement("div");a.appendChild(n);p.write(a.innerHTML)}}else{n.setAttribute("name","viewport");n.setAttribute("content","width=device-width,initial-scale="+f+", maximum-scale="+f+", minimum-scale="+f+", user-scalable=no")}function m(){var d=b.getBoundingClientRect().width;var r=d/7.5;b.style.fontSize=((r/e)*100)+"%";k.rem=h.rem=r}h.addEventListener("resize",function(){clearTimeout(g);g=setTimeout(m,300)},false);h.addEventListener("pageshow",function(d){if(d.persisted){clearTimeout(g);g=setTimeout(m,300)}},false);if(p.readyState==="complete"){p.body.style.fontSize=12*q+"px"}else{p.addEventListener("DOMContentLoaded",function(d){p.body.style.fontSize=12*q+"px"},false)}m();k.dpr=h.dpr=q;k.refreshRem=m;k.rem2px=function(s){var r=parseFloat(s)*this.rem;if(typeof s==="string"&&s.match(/rem$/)){r+="px"}return r};k.px2rem=function(s){var r=parseFloat(s)/this.rem;if(typeof s==="string"&&s.match(/px$/)){r+="rem"}return r}})(window,window["lib"]||(window["lib"]={}));
-    </script>-->
-    <script>
-        (function(c,g){var u=c.document;var b=u.documentElement;var n=u.querySelector('meta[name="viewport"]');var p=u.querySelector('meta[name="flexible"]');var a=0;var t=0;var m;var e=g.flexible||(g.flexible={});if(n){console.warn("将根据已有的meta标签来设置缩放比例");var f=n.getAttribute("content").match(/initial\-scale=([\d\.]+)/);if(f){t=parseFloat(f[1]);a=parseInt(1/t)}}else{if(p){var k=p.getAttribute("content");if(k){var s=k.match(/initial\-dpr=([\d\.]+)/);var i=k.match(/maximum\-dpr=([\d\.]+)/);if(s){a=parseFloat(s[1]);t=parseFloat((1/a).toFixed(2))}if(i){a=parseFloat(i[1]);t=parseFloat((1/a).toFixed(2))}}}}if(!a&&!t){var r=c.navigator.appVersion.match(/android/gi);var q=c.navigator.appVersion.match(/iphone/gi);var o=c.navigator.appVersion.match(/ipad/gi);var l=c.devicePixelRatio;if(q){if(l>=3&&(!a||a>=3)){a=3}else{if(l>=2&&(!a||a>=2)){a=2}else{a=1}}}else{a=1}t=1/a}b.setAttribute("data-dpr",a);if(!n){n=u.createElement("meta");n.setAttribute("name","viewport");n.setAttribute("content","initial-scale="+t+", maximum-scale="+t+", minimum-scale="+t+", user-scalable=no");if(b.firstElementChild){b.firstElementChild.appendChild(n)}else{var h=u.createElement("div");h.appendChild(n);u.write(h.innerHTML)}}function d(){var w=navigator.userAgent;var z=new Array("Android","iPhone","SymbianOS","Windows Phone","iPad","iPod");var x=true;for(var y=0;y<z.length;y++){if(w.indexOf(z[y])>0){x=false;break}}return x}function j(){var v=b.getBoundingClientRect().width;if(d()&&v<2047){v=v>540?540:v}var w=v/7.5;b.style.fontSize=w+"px";e.rem=c.rem=w}c.addEventListener("resize",function(){clearTimeout(m);m=setTimeout(j,300)},false);c.addEventListener("pageshow",function(v){if(v.persisted){clearTimeout(m);m=setTimeout(j,300)}},false);if(u.readyState==="complete"){u.body.style.fontSize=14*a+"px"}else{u.addEventListener("DOMContentLoaded",function(v){u.body.style.fontSize=14*a+"px"},false)}j();e.dpr=c.dpr=a;e.refreshRem=j;e.rem2px=function(w){var v=parseFloat(w)*this.rem;if(typeof w==="string"&&w.match(/rem$/)){v+="px"}return v};e.px2rem=function(w){var v=parseFloat(w)/this.rem;if(typeof w==="string"&&w.match(/px$/)){v+="rem"}return v}})(window,window["lib"]||(window["lib"]={}));
-    </script>
-       
-    <link rel="stylesheet" href="//cdn.bootcss.com/normalize/3.0.0/normalize.min.css"></link>
-    <style>
-        html,body{
-            width:100%;
-            height:100%;
-            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="play-all-btn">dd</div>
+  </body>
+  <script>
+    window.__PRELOADED_STATE__ = {
+      collect: {
+        collectDetail: {
+          authorAvatar:
+            'http://pic.xiami.net/images/avatar_new/341/17067046_1422783158.jpg',
+          userId: '17067046',
+          collects: 0,
+          comments: 0,
+          collectLogo:
+            'http://pic.xiami.net/images/artistlogo/91/14919779007791.jpg',
+          collectName: '1',
+          userName: '李哔哔',
+          tags: [],
+          listId: '935445854',
+          cleanDesc: '',
+          songCount: 2,
+          playCount: 115
+        },
+        collectSongs: {
+          songs: [
+            {
+              songName:
+                '你离开了南京，从此没有人和我说话（harmonica） Cover李志',
+              mvId: '',
+              songStatus: 0,
+              listenFiles: [
+                {
+                  quality: 's',
+                  listenFile:
+                    'http://s740.xiami.net/996/2099984996/2102683419/1795482532_1484899150365.wav?ccode=xiami__&expire=86400&duration=72&psid=b6f45d3b20c274d74479b415a3968012&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795482532&fn=1795482532_1484899150365.wav&vkey=Bcd64ef4d62db4ec37715c113f7813afd'
+                },
+                {
+                  quality: 'e',
+                  listenFile:
+                    'http://s32.xiami.net/996/2099984996/2102683419/1795482532_1484899150365.m4a?ccode=xiami__&expire=86400&duration=72&psid=b6f45d3b20c274d74479b415a3968012&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795482532&fn=1795482532_1484899150365.m4a&vkey=B51d379e20a60cf3330aa7e4458646761'
+                },
+                {
+                  quality: 'f',
+                  listenFile:
+                    'http://s64.xiami.net/996/2099984996/2102683419/1795482532_1484899150365.m4a?ccode=xiami__&expire=86400&duration=72&psid=b6f45d3b20c274d74479b415a3968012&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795482532&fn=1795482532_1484899150365.m4a&vkey=B51d379e20a60cf3330aa7e4458646761'
+                },
+                {
+                  quality: 'h',
+                  listenFile:
+                    'http://s320.xiami.net/996/2099984996/2102683419/1795482532_1484899150365.mp3?ccode=xiami__&expire=86400&duration=72&psid=b6f45d3b20c274d74479b415a3968012&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795482532&fn=1795482532_1484899150365.mp3&vkey=Bcd7d9d6b3a3293937574dd13bd3d958c'
+                },
+                {
+                  quality: 'l',
+                  listenFile:
+                    'http://s128.xiami.net/996/2099984996/2102683419/1795482532_1484899150365.mp3?ccode=xiami__&expire=86400&duration=72&psid=b6f45d3b20c274d74479b415a3968012&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795482532&fn=1795482532_1484899150365.mp3&vkey=Bcd7d9d6b3a3293937574dd13bd3d958c'
+                }
+              ],
+              songId: '1795482532',
+              purviewRoleVOs: [
+                {
+                  quality: 'e',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'f',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'l',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'h',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 's',
+                  operationVOs: [
+                    { upgradeRole: 3, needVip: true, needPay: false },
+                    { upgradeRole: 3, needVip: true, needPay: false }
+                  ]
+                }
+              ],
+              artistLogo:
+                'http://pic.xiami.net/images/artistlogo/97/15034273132597.jpg',
+              albumLogo:
+                'http://pic.xiami.net/images/album/img96/2099984996/8991481484899148.jpg',
+              albumName:
+                '你离开了南京，从此没有人和我说话（harmonica） Cover李志',
+              description: null,
+              singerVOs: [{ artistName: '晓月老板', artistId: '2099984996' }],
+              lyric: null
+            },
+            {
+              songName: '你离开了南京，从此没有人和我说话 from kk',
+              mvId: '',
+              songStatus: 0,
+              listenFiles: [
+                {
+                  quality: 'e',
+                  listenFile:
+                    'http://s32.xiami.net/795/2110206795/0/1795739058_1491079587812.m4a?ccode=xiami__&expire=86400&duration=70&psid=aa157cff0a8217dfe59ca7b377efa95c&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795739058&fn=1795739058_1491079587812.m4a&vkey=Bbdb738bbea672a42525c9d25c6b5f1f4'
+                },
+                {
+                  quality: 'f',
+                  listenFile:
+                    'http://s64.xiami.net/795/2110206795/0/1795739058_1491079587813.m4a?ccode=xiami__&expire=86400&duration=70&psid=aa157cff0a8217dfe59ca7b377efa95c&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795739058&fn=1795739058_1491079587813.m4a&vkey=B0e748e859363f75c7568fab3fb36662d'
+                },
+                {
+                  quality: 'h',
+                  listenFile:
+                    'http://s192.xiami.net/795/2110206795/5152/1795739058_1546304939108_1243.m4a?ccode=xiami__&expire=86400&duration=70&psid=aa157cff0a8217dfe59ca7b377efa95c&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795739058&fn=1795739058_1546304939108_1243.m4a&vkey=Bb6083f7161db478a19be3370da1cccf9'
+                },
+                {
+                  quality: 'l',
+                  listenFile:
+                    'http://s128.xiami.net/795/2110206795/0/1795739058_1491079587813.mp3?ccode=xiami__&expire=86400&duration=70&psid=aa157cff0a8217dfe59ca7b377efa95c&ups_client_netip=null&ups_ts=1564564525&ups_userid=0&utid=&vid=1795739058&fn=1795739058_1491079587813.mp3&vkey=B8fbf6fd3eced02ead4de0b4a56e7a72b'
+                }
+              ],
+              songId: '1795739058',
+              purviewRoleVOs: [
+                {
+                  quality: 'e',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'f',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'l',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 'h',
+                  operationVOs: [
+                    { upgradeRole: 0, needVip: false, needPay: false },
+                    { upgradeRole: 0, needVip: false, needPay: false }
+                  ]
+                },
+                {
+                  quality: 's',
+                  operationVOs: [
+                    { upgradeRole: 1, needVip: true, needPay: false },
+                    { upgradeRole: 1, needVip: true, needPay: false }
+                  ]
+                }
+              ],
+              artistLogo:
+                'http://pic.xiami.net/images/artistlogo/91/14919779007791.jpg',
+              albumLogo:
+                'http://pic.xiami.net/images/artistlogo/91/14919779007791.jpg',
+              albumName: '',
+              description: null,
+              singerVOs: [{ artistName: 'KK', artistId: '2110206795' }],
+              lyric: null
+            }
+          ],
+          pagingVO: { count: 2 }
+        },
+        collectByUser: {
+          collects: [
+            {
+              collectLogo:
+                'http://pic.xiami.net/images/collect/993/93/37918993_1417348969_waFc.jpg',
+              listId: '37918993',
+              playCount: 248,
+              collectName: '李逼逼'
+            },
+            {
+              collectLogo:
+                'http://pic.xiami.net/images/album/img55/1155/57381413914647.jpg',
+              listId: '363692560',
+              playCount: 76,
+              collectName: '孤独的人是可耻的'
+            },
+            {
+              collectLogo:
+                'http://pic.xiami.net/images/artistlogo/91/14919779007791.jpg',
+              listId: '935445854',
+              playCount: 115,
+              collectName: '1'
+            }
+          ]
         }
-        #root{
-            width:100%;
-            height:100%;
+      },
+      metaObj: {
+        title: '虾米歌单 | 1 - 虾米音乐',
+        name: '虾米歌单 | 1 - 虾米音乐',
+        image: 'http://pic.xiami.net/images/artistlogo/91/14919779007791.jpg',
+        description: '李哔哔'
+      },
+      checkSwitch: {
+        vipCheck: [{ version: '8.1.2', platform: 'iOS', open: false }],
+        alipay:
+          'alipays://platformapi/startapp?appId=20000042&publicBizType=LIFE_APP&publicId=2015120800940205',
+        closeSmoothScroll: ['/daily'],
+        topBarText: '打开虾米APP，发现音乐新世界',
+        banners: [
+          {
+            id: 4,
+            logo:
+              'https://gw.alicdn.com/tfs/TB1_RcGbND1gK0jSZFKXXcJrVXa-1125-420.png',
+            url: 'https://act.xiami.com/wow/xiami/act/nonghangxiami?wh_biz=tm'
+          },
+          {
+            id: 1,
+            logo:
+              'https://gw.alicdn.com/tfs/TB1rqpnMgDqK1RjSZSyXXaxEVXa-1280-400.jpg',
+            url: 'https://act.xiami.com/wow/xiami/act/huaxialianming?wh_biz=tm'
+          },
+          {
+            id: 0,
+            logo:
+              '//gw.alicdn.com/tfs/TB1IfslwwDqK1RjSZSyXXaxEVXa-1280-400.jpg',
+            url:
+              'https://market.m.taobao.com/apps/market/m-vip/member-intro.html?wx_navbar_transparent=true&from=XIAMI'
+          },
+          {
+            id: 2,
+            logo:
+              'https://gw.alicdn.com/tfs/TB1QK5jeWWs3KVjSZFxXXaWUXXa-1280-400.png',
+            url:
+              'https://h5.blackfish.cn/vip/promotion/cooperation/2/01211075154300000'
+          },
+          {
+            id: 3,
+            logo:
+              'https://gw.alicdn.com/tfs/TB18kPOd8WD3KVjSZKPXXap7FXa-1125-420.jpg',
+            url:
+              'https://render.alipay.com/p/f/jfxb4alj/pages/receive-redpacket/index.html?__webview_options__=ttb%253Dauto&partnerId=&sceneCode=KF_COMMON&shareChannel=QRCode&shareUserId=2088421312157042&sharedUserId='
+          }
+        ],
+        disableOpenAppUA: ['didi']
+      },
+      deepLink: { inXiami: null, show: true }
+    };
+  </script>
+  <script src="https://g.alicdn.com/xiami-frontend/AmHybrid/0.1.10/AmHybrid.h5.js"></script>
+  <script src="page.js"></script>
+  <script>
+    window.player.playlist = [
+      {
+        src:
+          'https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzM='
+      },
+        {
+            src:
+            'https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzE='
         }
-    </style>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-<script>eruda.init();</script>
-</head>
-
-<body>
-    <div id="root">
-        <div><audio preload="auto" id="player" controls src="https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzM="></audio></div>
-        
-    </div>
-    
-    
-</body>
-<script>
-    document.body.onload = function() {
-      var player = document.getElementById('player');
-      player.load();
-      player.canplay = function(e) {
-         player.play();
-      }
-      
-      player.onended = function(e) {
-       player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
-       player.load();
-       player.play();
-      }
-        player.addEventListener('timeupdate', function () {  
-          // 监听播放完成，ended 事件不准确  
-          if (player.currentTime >= player.duration) {    
-            player.src = "https://res.wx.qq.com/voice/getvoice?mediaid=MzI1NTM3ODU4OV8xMDAwMDAwMzU="
-       player.load();
-       player.play();
-          }}, 
-        false);
-    }
-    
-</script>
-
+    ];
+  </script>
 </html>
